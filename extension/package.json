@@ -2617,6 +2617,30 @@
           "type": "boolean",
           "markdownDescription": "`\"rangeVariableTypes\"` controls inlay hints for variable types in range statements:\n```go\n\tfor k/* int*/, v/* string*/ := range []string{} {\n\t\tfmt.Println(k, v)\n\t}\n```\n",
           "default": false
+        },
+        "go.implementation": {
+          "filesInclude": {
+            "type": "string",
+            "description": "files want to include in the implementation search.\n",
+            "scope": "resource"
+          },
+          "filesExclude": {
+            "type": "string",
+            "description": "files not want to include in the implementation search.\n",
+            "scope": "resource"
+          }
+        },
+        "go.reference": {
+          "filesInclude": {
+            "type": "string",
+            "description": "files want to include in the implementation search.\n",
+            "scope": "resource"
+          },
+          "filesExclude": {
+            "type": "string",
+            "description": "files not want to include in the implementation search.\n",
+            "scope": "resource"
+          }
         }
       }
     },

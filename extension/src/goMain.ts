@@ -76,6 +76,8 @@ import { GoTaskProvider } from './goTaskProvider';
 import { setTelemetryEnvVars, activationLatency, telemetryReporter } from './goTelemetry';
 import { experiments } from './experimental';
 import { allToolsInformation } from './goToolsInformation';
+import { GoplsImplementationProvider } from './goImplementation';
+import { GoplsReferenceProvider } from './goReference';
 
 const goCtx: GoExtensionContext = {};
 
@@ -151,6 +153,9 @@ export async function activate(ctx: vscode.ExtensionContext): Promise<ExtensionA
 	GoDebugConfigurationProvider.activate(ctx, goCtx);
 	GoDebugFactory.activate(ctx, goCtx);
 	experiments.activate(ctx);
+	GoplsImplementationProvider.activate(ctx, goCtx);
+	GoplsReferenceProvider.activate(ctx, goCtx);
+
 	GoTestExplorer.setup(ctx, goCtx);
 	GoExplorerProvider.setup(ctx);
 	GoPackageOutlineProvider.setup(ctx);
